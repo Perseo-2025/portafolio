@@ -1,0 +1,89 @@
+//Aplicamos estilos
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.titulo2{
+    text-align: center;
+    h2{
+        padding: 10rem 0 5rem 0;
+        border-bottom: 1px solid gray;
+    }
+}
+
+.proyectos{
+   @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    /* background-color: v.$amarillo; */
+    .section{
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        margin: 1.5rem 0 1rem 0;
+        &:hover{
+            .capa{
+                transform: scale(1);
+                cursor: pointer;
+            }
+        }
+    }
+    .borde-neon {
+        padding: 1rem;
+        border: 1px solid v.$rosa; /* Color del borde */
+        border-radius: 10px;
+        box-shadow: 0 0 10px v.$rosa, 0 0 10px v.$rosa, 0 0 10px v.$rosa; /* Sombra que da el efecto neon */
+    }
+    .capa{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+        transform: scale(0);
+        transition: .3s ease;
+    }
+}
+
+/* Habilidades */
+.skill{
+    
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }   
+
+    i{
+        font-size: 10rem;
+    }
+
+    .sub-skill{
+        margin: 1rem;
+        text-align: center;
+        padding: 5rem;
+        border-radius: 1rem;
+
+        &:hover{
+            border: 1px solid gray; /* Color del borde */
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray, 0 0 10px gray, 0 0 10px gray; /* Sombra que da el efecto neon */
+        }
+    }
+}
+
+.footer{
+    padding: 2rem;
+    text-align: center;
+    background-color: rgb(177, 165, 165);
+}
+
+
+
+

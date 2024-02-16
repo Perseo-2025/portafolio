@@ -1,0 +1,123 @@
+//Aplicamos estilo
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    background-color: v.$rosa;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    @include m.tablet {
+        &.fijo{
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+    }   
+    
+    h1{
+        text-align: center;
+
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+    .contenido-header{
+        padding: 2rem;
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+.navegacion-principal{
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }   
+    a{
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: v.$negro;
+        font-size: 2rem;
+
+        @include m.tablet {
+            margin: 0;
+        }
+        
+        &:hover{
+            color: v.$blanco;
+            
+        }
+    }  
+}
+.titulo{
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding-top: 3rem;
+    }
+    padding-top: 3rem;
+}
+
+.contenido-presentacion{
+    text-align: center;
+    font-family: v.$fuenteSecundaria;
+    justify-content: center;
+    @include m.tablet {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        padding: 0; 
+    }
+    
+    h1{
+        font-size: 5rem;
+        color: transparent;
+        background: linear-gradient(to right, v.$rosa 0%, blue 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .redes-contacto{
+        padding-top: 2rem;
+        a{
+            color: v.$negro;
+            font-size: 4rem;
+            margin: 0 1.5rem 0 1.5rem;
+            border-radius: 1rem;
+            padding: 0 1rem 0 1rem;
+            
+            &:hover{
+                background-color: v.$morado;
+                color: v.$blanco;
+                transition: 0.1s;
+            }
+        }
+
+    }
+    .cv{
+        padding-top: 6rem;
+        text-align: center;
+        
+        a{
+            font-size: 3rem;
+            color: v.$rosa;
+            border:solid 1px gray ;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            &:hover{
+                border-bottom: solid 3px v.$rosa;
+                background-color: v.$amarillo;
+                padding: 1rem;
+                border-radius: 1rem;  
+                    
+            }
+        }
+        
+    }
+}
